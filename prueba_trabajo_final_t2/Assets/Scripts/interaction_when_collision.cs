@@ -18,12 +18,12 @@ public class interaction_when_collision : MonoBehaviour
         
     }
 
-    private void OntriggerEnter(Collider otherCollision)
+    private void OnCollisionEnter(Collision otherCollider)
     {
-        if (otherCollision.gameObject.CompareTag("projectil"))
+        if (otherCollider.gameObject.CompareTag("projectil"))
         { 
             
-            Destroy(gameObject);
+            Destroy(otherCollider.gameObject);
             //if(counter<= 0)
            
 

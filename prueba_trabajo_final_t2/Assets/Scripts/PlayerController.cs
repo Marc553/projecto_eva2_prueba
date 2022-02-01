@@ -11,20 +11,27 @@ public class PlayerController : MonoBehaviour
     public float verticalInput;
     public GameObject projectilPrefab;
 
+    private Rigidbody playerRigidbody;
+    [SerializeField] private float speed = 10f;
     void Start()
     {
-       
+        playerRigidbody = GetComponent<Rigidbody>();
+        //focalPoint = GameObject.Find("Focal_point");
     }
 
    
     void Update()
     { 
         //Movimiento
-        horizontalInput = Input.GetAxis("Horizontal");
+        horizontalInput = Input.GetAxis("Horizontal");  
         verticalInput = Input.GetAxis("Vertical");
-        
-        transform.Translate(Vector3.right * playerSpeed * Time.deltaTime * verticalInput);
-        transform.Translate(Vector3.back * playerSpeed * Time.deltaTime * horizontalInput);
+
+        playerRigidbody.AddForce(Vector3.right * playerSpeed * verticalInput);
+        playerRigidbody.AddForce(Vector3.forward * playerSpeed * horizontalInput);
+       
+       // float verticalInput = Input.GetAxis("Vertical");
+        //playerRigidbody.AddForce(Vector3.left * speed * horizontalInput);
+
 
         //Disparo 
         if (Input.GetKeyDown(KeyCode.Space))
