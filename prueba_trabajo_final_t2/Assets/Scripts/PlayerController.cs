@@ -26,8 +26,8 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");  
         verticalInput = Input.GetAxis("Vertical");
 
-        playerRigidbody.AddForce(Vector3.right * playerSpeed * verticalInput);
-        playerRigidbody.AddForce(Vector3.forward * playerSpeed * horizontalInput);
+        playerRigidbody.AddForce(Vector3.left * playerSpeed * verticalInput);
+        playerRigidbody.AddForce(Vector3.back * playerSpeed * horizontalInput);
        
        // float verticalInput = Input.GetAxis("Vertical");
         //playerRigidbody.AddForce(Vector3.left * speed * horizontalInput);
