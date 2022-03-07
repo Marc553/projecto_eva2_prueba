@@ -11,12 +11,13 @@ public class PlayerController : MonoBehaviour
     public float verticalInput;
     public GameObject projectilPrefab;
 
+    public GameObject focalPoint;
     private Rigidbody playerRigidbody;
     [SerializeField] private float speed = 10f;
     void Start()
     {
         playerRigidbody = GetComponent<Rigidbody>();
-        //focalPoint = GameObject.Find("Focal_point");
+        focalPoint = GameObject.Find("Pelota");
     }
 
    
@@ -26,8 +27,8 @@ public class PlayerController : MonoBehaviour
         horizontalInput = Input.GetAxis("Horizontal");  
         verticalInput = Input.GetAxis("Vertical");
 
-        playerRigidbody.AddForce(Vector3.left * playerSpeed * verticalInput);
-        playerRigidbody.AddForce(Vector3.back * playerSpeed * horizontalInput);
+        playerRigidbody.AddForce(focalPoint.transform.forward * playerSpeed * verticalInput);
+        playerRigidbody.AddForce(focalPoint.transform.right * playerSpeed * horizontalInput);
        
        // float verticalInput = Input.GetAxis("Vertical");
         //playerRigidbody.AddForce(Vector3.left * speed * horizontalInput);
