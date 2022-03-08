@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/Scenes/prueb2.unity
+- path: Assets/codigo.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - tierra
   - projectil
+  - enemigo
   layers:
   - Default
   - TransparentFX
